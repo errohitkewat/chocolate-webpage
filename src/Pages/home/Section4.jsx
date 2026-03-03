@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Section4 = () => {
   return (
@@ -10,7 +11,7 @@ const Section4 = () => {
         <p  className='leading-6 text-[#8d887d] mb-10 font-extralight text-[14px] text-center'>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
         
         <div className="   flex items-center justify-center  " >
-            <a className="text-sm text-[#756f63] opacity-70 mt-25 underline underline-offset-5 decoration-1 uppercase hover:text-[#31302e] duration-300  font-extralight" href="">View Selection</a>
+            <Link to='/menu' className="text-sm text-[#756f63] opacity-70 mt-25 underline underline-offset-5 decoration-1 uppercase hover:text-[#31302e] duration-300  font-extralight" href="">View Selection</Link>
         </div>
       </div>
 

@@ -6,13 +6,14 @@ import Menu from './Pages/menu/Menu'
 import Footer from './components/Footer'
 import OrderOnline from './Pages/orderOnline/OrderOnline'
 import ScrollToContact from './components/ScrollToContact'
-import CartModal from './components/CartComponent'
+import CartModal from './components/CartModal'
 import Lenis from '@studio-freight/lenis'
+import LoginPage from './Pages/LoginPage'
 
 const App = () => {
 
 
-// Smoth Scroll Using Lenis and bg image scroll effet with Lenis 
+  // Smoth Scroll Using Lenis and bg image scroll effet with Lenis 
     const bgRef = useRef(null);
     
     useEffect(() => {
@@ -23,25 +24,24 @@ const App = () => {
     
       function raf(time) {
         lenis.raf(time);
-    
         if (bgRef.current) {
           const scroll = lenis.scroll;
-          bgRef.current.style.transform = `translateY(${scroll * 0.05}px)`;
+          bgRef.current.style.transform = `translateY(${scroll * -0.08}px)`;
         }
-    
         requestAnimationFrame(raf);
       }
-    
       requestAnimationFrame(raf);
     
       return () => {
         lenis.destroy();
       };
     }, []);
-// Lenis code is completed
+  // Lenis code is completed
 
 
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  
 
 
   return (
@@ -49,13 +49,15 @@ const App = () => {
 
         <ScrollToContact />
 
-        <Navbar openCart={() => setIsCartOpen(true)}  />
+        <Navbar openLogin={()=> setIsLoginOpen(true)} openCart={() => setIsCartOpen(true)}  />
 
-        <div ref={bgRef} className="fixed h-300 -top-50 left-0 w-full -z-10">
+        <div ref={bgRef} className="fixed h-300 top-0 left-0 w-full -z-10">
           <img className="h-full w-full object-cover" src="/chocolateBgImage.png" alt=""/>
         </div>
 
         <CartModal isOpen={isCartOpen} closeCart={() => setIsCartOpen(false)} />
+        <LoginPage isOpen={isLoginOpen} closeLogin={() => setIsLoginOpen(false)} />
+
 
         <Routes>
           <Route path='/' element={<Home />}/>
