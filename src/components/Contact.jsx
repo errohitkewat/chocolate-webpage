@@ -1,6 +1,12 @@
 import React from 'react'
 
 const Contact = () => {
+
+    const submitHandler = (e)=>{
+        e.preventDefault();
+        console.log("Form Submitted ")
+    }
+
   return (
     <div id='contact' className='bg-[#f4f3f2] h-full w-full px-45  py-25 '>
         <div className='flex flex-col gap-4 items-center '>
@@ -10,7 +16,11 @@ const Contact = () => {
             <p className='px-80  text-center text-[#8d887d] font-extralight text-[14px] '>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you</p>
         </div>
 
-        <div className='py-10 flex h-full w-full gap-5 px-45'>
+        
+        <form onSubmit={(e)=>{
+               submitHandler(e)
+            }
+        } className='py-10 flex h-full w-full gap-5 px-45'>
             <div className='h-full flex flex-col gap-4 w-1/2 px-2'>
                 <div className='flex  flex-col gap-1'>
                     <label className='text-[#625f57] text-sm font-extralight' htmlFor="firstName">Enter Your Fist Name *</label>
@@ -38,7 +48,7 @@ const Contact = () => {
                 <button className='border hover:bg-[#8d8c8a] duration-300 font-extralight bg-[#64635f] text-white px-10 mt-7 py-3'>Submit</button>
             </div>
 
-        </div>
+        </form>
     </div>
   )
 }
