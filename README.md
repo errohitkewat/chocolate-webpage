@@ -1,1 +1,16 @@
-this repo is about a chocolate website clone that's template is available on WIX.
+# 🍫 Chocolate Webpage
+
+## 🚀 Features
+- Responsive design
+- Modern UI layout
+- Smooth user experience
+
+## 🛠️ Tech Stack
+- HTML
+- CSS
+- JavaScript
+- React.Js
+
+## 🌐 Live Demo
+(Add link here)
+
